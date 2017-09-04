@@ -50,6 +50,18 @@ filter(array, function(n){
 })
 
 
+//套路3， 序列号和反序列化
+// 在 js 中, 序列化使用 JSON 格式
+
+var s = JSON.stringify([1, 2, 3, 4])
+log('序列化后的字符串', typeof s, s)
+var a = JSON.parse(s)
+log('反序列化后的数组', typeof a, a)
+
+
+
+
+
 //求和基本套路
 var sum = function (array) {
     var a = 0

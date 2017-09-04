@@ -59,6 +59,34 @@ nextButton.addEventListener('click', function(){
 })
 
 
+//经典套路4 在页面中添加东西的框
+
+// 给 add button 绑定添加 todo 事件
+var addButton = document.querySelector('#id-button-add')
+
+addButton.addEventListener('click', function(){
+    // 获得 input.value
+    var todoInput = document.querySelector('#id-input-todo')
+    var todo = todoInput.value
+    // 添加到 container 中
+    var todoContainer = document.querySelector('#id-div-container')
+    var t = templateTodo(todo)
+    // 这个方法用来添加元素更加方便, 不需要 createElement
+    todoContainer.insertAdjacentHTML('beforeend', t);
+})
+
+var templateTodo = function(todo) {
+    var t = `
+        <div class='todo-cell'>
+            <button class='todo-done'>完成</button>
+            <button class='todo-delete'>删除</button>
+            <span contenteditable='true'>${todo}</span>
+        </div>
+    `
+    return t
+}
+
+
 
 
 
