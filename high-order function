@@ -1,0 +1,33 @@
+//高阶函数可以当成参数传递, 
+
+//process 先将array用processor 函数处理，再运行到新的函数中进行二次处理
+
+
+var process = function(array, processor) {
+    //将array中的每个元素通过processor这个函数处理返回一个新的array
+    var l = []
+    for (var i = 0; i < array.length; i++) {
+        var element = processor(array[i])
+        l.push(element)
+    }
+    return l 
+}
+
+//processor 可以是内置函数，有可以自定义一个函数
+
+1. 转化字符串
+var array = [1.1, 1.2, 1.3]
+process (array, String) 
+
+2. 转化成数字
+var array = ['1.1', '1.2', '1.3']
+process(array, Number)
+
+3. 向下取整
+var array = [1.1, 1.2, 1.3]
+process (array, Math.floor) 
+
+//如何处理一次数据取决于你怎么写, 自定义一个函数或者一下的匿名函数
+process(array, function(n) { 
+	return n + 1
+})
