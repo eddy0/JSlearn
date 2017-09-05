@@ -22,3 +22,16 @@ d.getMilliseconds()
 d.getDay()
 星期几, 0-6
 */
+
+//当前时间
+var currentTime = function() {
+    var d = new Date()
+    var year = d.getFullYear()
+    var month = d.getMonth() + 1
+    var date = d.getDate()
+    var hour = d.getHours() + 1
+    var minute = d.getMinutes()
+    var seconds = d.getSeconds()
+    var timeString = `${year}/${month}/${date} ${hour}:${minute}:${seconds}`
+    return timeString
+}
