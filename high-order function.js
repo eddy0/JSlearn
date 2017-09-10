@@ -5,7 +5,7 @@
 //processor必须是一个函数，不能有括号，有括号的意思是得到返回值
 
 
-//重点套路
+//重点套路的用法
 
 //套路1 array处理 ---- ！！！等价于内置的map 函数，以下有介绍！！！
 //将array中的每个元素通过processor这个函数处理返回一个新的array
@@ -25,7 +25,7 @@ process(array, function(n){
 })
 
 
-//套路2  过滤
+//套路2  array过滤
 // 设置一个filter函数，实现条件过滤，则得到符合条件的array
 
 var filter = function (array, processor) {
@@ -48,6 +48,18 @@ filter(array, function(n){
     //return condition
     return n < 3
 })
+
+
+//套路3， 序列号和反序列化
+// 在 js 中, 序列化使用 JSON 格式
+
+var s = JSON.stringify([1, 2, 3, 4])
+log('序列化后的字符串', typeof s, s)
+var a = JSON.parse(s)
+log('反序列化后的数组', typeof a, a)
+
+
+
 
 
 //求和基本套路
